@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Rescue System">
+
+<head>
+   <meta charset="utf-8">
+   <!-- <meta http-equiv="refresh" content="8"> -->
+   <meta http-equiv="X-UA-Compatible">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>SENDit View Trips</title>
+
+   <style>
+     /* body {
+         max-width: 500px;
+         background-image: image("C:\Users\admin\Documents\SENDit\Schweppes_truck2.jpeg");
+         background-color: rgb(245, 242, 237);
+         margin: 0 auto;
+      }*/
+      table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+   </style>
+
+</head>
+
+<body>
+
+    <h1>Travel Data</h1>
+    <?php
+    include 'db_connect.php';
+    
+    // Retrieve data from the travel table
+    $sql = "SELECT * FROM travel";
+    $result = mysqli_query($conn, $sql);
+
+    // Check if there are any records
+    if (mysqli_num_rows($result) > 0) {
+        // Display the data in a table
+        echo "<table>";
+        echo "<tr>
+                  <th>Name</th>
+                  <th>Contact Number</th>
+                  <th>Origin</th>
+                  <th>Destination</th>
+                  <th>Date of Travel</th>
+                  <th>Space Available</th>
+              </tr>";
+
+        // Fetch and display each row of data
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["contact"] . "</td>";
+            echo "<td>" . $row["origin"] . "</td>";
+            echo "<td>" . $row["destination"] . "</td>";
+            echo "<td>" . $row["date"] . "</td>";
+            echo "<td>" . $row["space"] . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    } else {
+        echo "No records found.";
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+    ?>
+</body>
+</html>

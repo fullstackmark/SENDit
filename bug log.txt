@@ -1,0 +1,6 @@
+08/12/23
+After submitting Request Trip in admin account, user taken back to main Homepage. CHECKED
+Align buttons properly; adminHomepage, managerHomepage. CHECKED
+Compaibility issues with regards to screen size. 
+DONE highlight with green trips already taken.
+optimize user accounts to improve login and logout security

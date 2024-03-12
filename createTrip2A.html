@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
+    <meta charset="utf-8">
+   <!-- <meta http-equiv="refresh" content="8"> -->
+   <meta http-equiv="X-UA-Compatible">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENDit Travel Form</title>
+    
+    <style>
+         body {
+            display: flex;
+            justify-content:left;
+            align-items: center;
+            /* height: 50vh; */
+            margin: 0;
+            background-image: url('schweppes_truck11.jpg');
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-color: rgb(216,215,222);
+        }
+        
+        form {
+            border: 1px solid rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 10px;
+            /* background-color: rgb(255, 255, 255); */
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        
+        .form-buttons {
+            margin-top: 30px;
+        }
+        
+        .form-buttons input {
+            margin-right: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: rgb(255, 217, 0);
+        }
+        .container {
+            display: block;
+            margin-top: 500px; /* Adjust the value as needed to control the spacing between the form and the button */
+  /* Add any styles for the button */
+
+        }
+
+        form label{
+            /* font-weight: bold; */
+            /* font-family: monospace; */
+            /* font-size:large; */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Travel Form</h1>
+    <form action="insertA.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <hr>
+        
+        <label for="contact">Contact/Ext Number:</label>
+        <input type="tel" id="contact" name="contact" pattern="\d{4}|\d{10}" title="Please enter a 10 or 4 digit number." required><br>
+        <hr>
+        
+        <label for="origin">Origin:</label>
+        <select id="origin" name="origin" required>
+            <option value="">Select an option</option>
+            <option value="Harare">Harare</option>
+            <option value="Bulawayo">Bulawayo</option>
+            <option value="Gweru">Gweru</option>
+            <option value="Masvingo">Masvingo</option>
+            <option value="Victoria Falls">Victoria Falls</option>
+            <option value="Chiredzi">Chiredzi</option>
+            <option value="Bindura">Bindura</option>
+            <option value="Chinhoyi">Chinhoyi</option>
+            <option value="Mutare">Mutare</option>
+            <option value="Showgrounds">Showgrounds</option>
+        </select><br>
+        <hr>
+        
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+            <option value="">Select an option</option>
+            <option value="Harare">Harare</option>
+            <option value="Bulawayo">Bulawayo</option>
+            <option value="Gweru">Gweru</option>
+            <option value="Masvingo">Masvingo</option>
+            <option value="Victoria Falls">Victoria Falls</option>
+            <option value="Chiredzi">Chiredzi</option>
+            <option value="Bindura">Bindura</option>
+            <option value="Chinhoyi">Chinhoyi</option>
+            <option value="Mutare">Mutare</option>
+            <option value="Showgrounds">Showgrounds</option>
+        </select><br>
+        <hr>
+
+        <label for="date">Date of Travel:</label>
+        <input type="date" id="date" name="date" required><br>
+        <hr>
+
+        <label for="space">Space Available:</label>
+        <select id="space" name="space" required>
+            <option value="">Select an option</option>
+            <option value="Small Package">Small Package</option>
+            <option value="Large Package">Large Package</option>
+            <option value="Multiple Packages">Multiple Packages</option>
+        </select><br>
+        <hr>
+
+        <div class="form-buttons">
+            <input id="submitbtn" type="submit" value="Submit">
+            <input id="resetbtn" type="reset" value="Clear">
+        </div>
+    </form>
+    <div class="container">
+        <button onclick="goToPreviousPage()">Back</button>
+      </div>
+
+    <script>
+  function goToPreviousPage() {
+    window.history.back();
+    }
+
+    // script to set today's date as default value
+  //   var today = new Date().toISOString().split('T')[0];
+  // document.getElementById("date").value = today;
+  //  
+    </script>
+</body>
+</html>
